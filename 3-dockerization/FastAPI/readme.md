@@ -96,8 +96,10 @@ Swagger arayüzü üzerinden:
 işlemleri test edilmiştir.
 
 Swagger ekran görüntüsü:  
-`screenshots/project1.png`
-`screenshots/project2.png`
+![Docker](screenshots/project1.png)
+
+![Docker](screenshots/project2.png)
+
 ---
 
 ## Kullanıcı ve Activity Akışı
