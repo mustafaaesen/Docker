@@ -87,7 +87,8 @@ doğrulamaktadır.
 
 Bu pratiğin çıktısını gösteren ekran görüntüsü aşağıdaki dosyada yer almaktadır:
 
-screenshots/docker1.png
+![Docker](screenshots/docker1.png)
+
 
 Bu ekran görüntüsünde Docker container’ın çalıştırılması ve çıktının terminalde
 görülmesi yer almaktadır.
