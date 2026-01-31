@@ -35,7 +35,8 @@ CMD kullanımı ile yapılan çalışmada:
 
 CMD override davranışını gösteren terminal çıktısı aşağıdaki görselde yer almaktadır:
 
-screenshots/dockercmd-cmdoverride.png
+![Docker](screenshots/docker-entrypoint.png)
+
 
 ---
 
@@ -55,7 +56,8 @@ ENTRYPOINT kullanımı ile yapılan çalışmada:
 
 ENTRYPOINT davranışını gösteren terminal çıktısı aşağıdaki görselde yer almaktadır:
 
-screenshots/docker-entrypoint.png
+![Docker](screenshots/dockercmd-cmdoverride.png)
+
 
 ---
 
