@@ -1,0 +1,44 @@
+#bu aşmaya kadar yapılanları kullanrak compose dosyası oluşturma
+
+#birden fazla container network volume servis adıyla iletişim tek komutla ayağı kaldırma ve kapatma pratiğidir
+
+#web-->nginx(server)
+#client -->alpine (geçici istek atan)
+#volume-->nginx html ieçriği için
+#network--> compose otomatik oluşturur
+
+version: "3.9"
+
+services: #compose da çaçışacak containerların tanımı
+  web: #nginx image kullanır volume ile kalıcı alan tanımlar 80 portunu 80080 e host eder
+    image: nginx
+    container_name: compose_web
+    ports:
+      - "8080:80"
+    volumes:
+      - web-data:/usr/share/nginx/html
+
+  client: #alpine image kullanır uzun süre yaşar web servisi hazır olunca başlar
+    image: alpine
+    container_name: compose_client
+    command: sleep 3600
+    depends_on:
+      - web
+    
+
+volumes: #container bağımsız veri alanı
+  web-data:
+
+
+
+#-----------------SERVİS AYAĞI KALDIRMA------------------------------
+
+#docker-compose up -d ile web ve client container lar çalışır otomatik network ve volume oluşur
+#docker compose ps ile kontrol 
+
+
+#------------------CLIENT TARAFI KONTROLÜ------------------
+
+#docker exec -it compose_client sh ile container içine girip
+#wget -qO- http://web  ayarlaması yapılır 
+

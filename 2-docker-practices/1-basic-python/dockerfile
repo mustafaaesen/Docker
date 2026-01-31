@@ -1,0 +1,26 @@
+FROM python:3.11-slim
+#slim küçük boyutlu hazır python runtime içeren base image ataması
+
+WORKDIR /app
+#cotnainer içerisinde sonraki komutlarında çalışacağı çalışma dizini oluşturur
+
+COPY app.py . 
+#hosttaki isimli dosyayı image içindeki /app dizinine kopyalar
+
+CMD  ["python","app.py"]
+#container çalışınca çalışacak default komutu içerir
+
+#1
+#IMAGE BUILD
+
+#dockerfile bulunan dizininde
+
+#"docker build -t python-basic" yazınca python basic adına image oluşturur
+
+
+
+#2
+#CONTAINER
+#oluşturulan image dan container başlatma
+
+#"docker run python-basic" ile image dan container başlatılır ve app.py de dosya işlenir

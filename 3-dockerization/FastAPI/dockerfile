@@ -1,0 +1,28 @@
+FROM python:3.12-slim 
+#kurulacak python imajı 
+
+WORKDIR /app
+#container içindeki çalışma dizini
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+#containera requirements.txt dosyasını kopyalar ve içindekileri paketleri kurar
+
+COPY . .
+#projedeki tüm dosyaları models routes mainpy container içindeki çalışma dizine kopyalar
+
+EXPOSE 8000
+#8000 potunu dinler
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+#container çalıştığında otomatik çalışacak komutu
+#uvicorn main:app ile fastapi başlatır 0.0.0.0 ile dış dünyaya açar 
+
+
+#-----------BUILT ALMA---------------------
+ # docker build -t fastapi-app .
+   #dcokerfile okunur baştan aşağı çalıştırır image üretir 
+
+ # docker run -p 8000:8000 fastapi-app
+ #container portuna pc deki çalışan portu atar

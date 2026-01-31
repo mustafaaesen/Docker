@@ -1,0 +1,19 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY app.py .
+
+CMD ["python","app.py"]
+
+#IMAGE BUILD
+#docker build -t volume-test .
+
+#CONTAINER RUN
+#docker run volume-test
+#tekrar çalıştırıldığında txt içeriği gitmiş olur
+
+#VOLUME ile RUN
+
+#docker run -v volume-test-data:/app volume-test
+#tekrar çalıştırıldığında data.txt silinemz doysa büyür
